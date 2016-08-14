@@ -17,8 +17,9 @@ sum(is.na(data$steps))
 #2a: Total number of steps taken
 totalSteps <- aggregate(steps~date,data=data,sum, na.rm = TRUE)
 hist(totalSteps$steps, main = paste("Total Steps Each Day"), col="green", xlab="Number of Steps")
+```
 ![plot2](instructions_fig/Section2.png)
-
+```{r}
 #2b: find Average of Steps
 totalStepsmean <- mean(totalSteps$steps)
 #2c: find Median of steps

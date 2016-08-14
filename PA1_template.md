@@ -58,4 +58,6 @@ data$weekend <- as.factor(ifelse(data$dayname == "Sabtu" |
 library(lattice)
 plotdata <- aggregate(steps ~ interval + weekend,data, mean)
 xyplot(steps ~ interval | factor(weekend), data=plotdata, aspect=1/3, type="l")
-,,,
+
+```
+

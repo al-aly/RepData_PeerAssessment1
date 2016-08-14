@@ -33,7 +33,10 @@ plot(steps_by_interval$interval,steps_by_interval$steps, type="l", xlab="Interva
 #3c:Find interval with most average steps.
 max_interval <- steps_by_interval[which.max(steps_by_interval$steps),1]
 print(max_interval)
+```
+![plot3](instructions_fig/Section3.png)
 
+```{r}
 ##Section 4:Imputing missing values
 incomplete <- sum(!complete.cases(data))
 print(incomplete)
@@ -52,6 +55,10 @@ mean_diff <- totalStepsmean.i - totalStepsmean
 med_diff <- totalStepsmedian.i - totalStepsmedian
 total_diff <- sum(steps_by_day_i$steps) - sum(totalSteps$steps)
 print(total_diff)
+```
+![plot4](instructions_fig/Section4.png)
+
+```{r}
 ##Section 5:Are there differences in activity patterns between weekdays and weekends?
 
 data$dayname <- weekdays(data$date)
@@ -62,4 +69,4 @@ plotdata <- aggregate(steps ~ interval + weekend,data, mean)
 xyplot(steps ~ interval | factor(weekend), data=plotdata, aspect=1/3, type="l")
 
 ```
-
+![plot5](instructions_fig/Section5.png)
